@@ -1,8 +1,22 @@
-export function romanToInteger(str) {
-    let result = 0;
-    /*
-    Напишите код, преобразующий число из римской записи в арабскую.
-    На вход вы получите строку, ответом должно быть число.
-     */
-    return result;
+export function romanToInteger(roman) {
+    const romanMap = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000,
+    };
+    let total = 0;
+    for (let i = 0; i < roman.length; i++) {
+        const currentSymbolValue = romanMap[roman[i]];
+        const nextSymbolValue = romanMap[roman[i + 1]];
+        if (nextSymbolValue && currentSymbolValue < nextSymbolValue) {
+            total -= currentSymbolValue;
+        } else {
+            total += currentSymbolValue;
+        }
+    }
+    return total;
 }
