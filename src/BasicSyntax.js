@@ -1,4 +1,4 @@
-function romanToInteger(roman) {
+export function romanToInteger(roman) {
     const romanMap = {
         I: 1,
         V: 5,
@@ -24,7 +24,3 @@ function romanToInteger(roman) {
 
     return total;
 }
-
-module.exports = {
-    romanToInteger,
-};
