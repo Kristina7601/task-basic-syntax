@@ -8,19 +8,15 @@ export function romanToInteger(roman) {
         D: 500,
         M: 1000,
     };
-
     let total = 0;
-
     for (let i = 0; i < roman.length; i++) {
         const currentSymbolValue = romanMap[roman[i]];
         const nextSymbolValue = romanMap[roman[i + 1]];
-
         if (nextSymbolValue && currentSymbolValue < nextSymbolValue) {
             total -= currentSymbolValue;
         } else {
             total += currentSymbolValue;
         }
     }
-
     return total;
 }
